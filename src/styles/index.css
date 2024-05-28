@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #009ee2;
+}
+body {
+  color: white;
+  background-color: black;
+  accent-color: var(--color-primary);
+  font-optical-sizing: auto;
+}
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+.text-primary,
+.a-main:hover {
+  color: var(--color-primary);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.indicators {
+  position: absolute;
+  z-index: 1000;
+  bottom: 2rem;
+  left: 2rem;
+}
+.indicators li {
+  margin: 0 0.3rem !important;
+}
+.bg-primary-hover:hover {
+  background-color: rgba(0, 158, 226, 0.8);
+}
+hr {
+  border-width: 0.25rem;
+  width: 2rem;
+  border-color: var(--color-primary);
+}
+.bg-lines {
+  background-image: url('./svgs/lines-1.svg');
+}
+.bg-lines-2 {
+  background-image: url('./svgs/lines-2.svg');
+}
