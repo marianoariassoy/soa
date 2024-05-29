@@ -1,6 +1,12 @@
 import Image from '../../components/Image'
+import { useInView } from 'react-intersection-observer'
 
 const Clientes = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
+
   const data = [
     {
       id: 1,
@@ -21,7 +27,12 @@ const Clientes = () => {
   ]
   return (
     <section id='clientes-y-proyectos'>
-      <div className='m-auto max-w-6xl px-6 pt-28 pb-20 flex flex-col gap-y-6'>
+      <div
+        className={`m-auto max-w-6xl px-6 pt-28 mb-12 flex flex-col gap-y-6 ${
+          inView ? 'animate-fade-up' : 'opacity-0'
+        }`}
+        ref={ref}
+      >
         <h1 className='text-5xl lg:text-6xl font-extrabold'>CLIENTES</h1>
         <p className='lg:text-xl text-balance'>
           Nuestros clientes son nuestra mejor carta de presentación. Hemos tenido el privilegio de colaborar con
@@ -29,19 +40,23 @@ const Clientes = () => {
           han impulsado su éxito. Explore nuestra galería de proyectos para conocer más sobre nuestro trabajo y el
           impacto que hemos tenido en la región.
         </p>
-        <div className='grid grid-cols-2 lg:grid-cols-4 mt-6 gap-12 lg:gap-24'>
-          {data.map(({ id, image }) => (
-            <div
-              key={id}
-              className='aspect-square'
-            >
-              <Image
-                src={image}
-                alt='image'
-              />
-            </div>
-          ))}
-        </div>
+      </div>
+      <div
+        className={`m-auto max-w-6xl animate-delay-500 px-6 pb-20 grid grid-cols-2 lg:grid-cols-4 mt-6 gap-12 lg:gap-24 ${
+          inView ? 'animate-fade' : 'opacity-0'
+        }`}
+      >
+        {data.map(({ id, image }) => (
+          <div
+            key={id}
+            className='aspect-square'
+          >
+            <Image
+              src={image}
+              alt='image'
+            />
+          </div>
+        ))}
       </div>
     </section>
   )

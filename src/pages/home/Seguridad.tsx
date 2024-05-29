@@ -1,4 +1,12 @@
+import { useInView } from 'react-intersection-observer'
+import { Lines3 } from '../../components/icons'
+
 const Seguridad = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
+
   return (
     <section
       id='seguridad-y-medio-ambiente'
@@ -8,10 +16,16 @@ const Seguridad = () => {
           'url(https://images.pexels.com/photos/60575/smoke-smoking-chimney-fireplace-60575.jpeg?auto=compress&cs=tinysrgb&w=2400)'
       }}
     >
-      <div className='absolute top-0 right-0 h-20 w-64 bg-lines-2 z-10 bg-no-repeat'></div>
+      <div className='absolute top-0 right-0 h-20 z-10'>
+        <Lines3 />
+      </div>
       <div className='absolute top-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent'></div>
       <div className='absolute w-full h-full flex items-end justify-center z-20'>
-        <div className='w-full max-w-6xl px-6 flex flex-col items-end gap-y-6 pb-32 text-right'>
+        <div
+          className={`w-full max-w-6xl px-6 flex flex-col items-end gap-y-6 pb-32 text-right 
+          ${inView ? 'animate-fade-left' : 'opacity-0'}`}
+          ref={ref}
+        >
           <div>
             <h2 className='text-2xl'>COMPROMISO CON LA</h2>
             <h1 className='text-5xl lg:text-6xl font-extrabold max-w-2xl'>SEGURIDAD Y MEDIO AMBIENTE</h1>

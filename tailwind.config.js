@@ -5,5 +5,6 @@ export default {
     fontFamily: {
       sans: 'Montserrat, sans-serif'
     }
-  }
+  },
+  plugins: [require('tailwindcss-animated')]
 }

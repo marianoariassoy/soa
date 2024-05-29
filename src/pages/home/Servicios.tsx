@@ -1,6 +1,12 @@
 import ServiciosItem from './ServiciosItem'
+import { useInView } from 'react-intersection-observer'
 
 const Servicios = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
+
   const data = [
     {
       id: 1,
@@ -48,7 +54,12 @@ const Servicios = () => {
 
   return (
     <section id='servicios'>
-      <div className='m-auto max-w-6xl px-6 pt-12 lg:pt-28 pb-20 flex flex-col gap-y-6'>
+      <div
+        className={`m-auto max-w-6xl px-6 pt-12 lg:pt-28 pb-20 flex flex-col gap-y-6 ${
+          inView ? 'animate-fade-up' : 'opacity-0'
+        }`}
+        ref={ref}
+      >
         <h1 className='text-5xl lg:text-6xl font-extrabold'>SERVICIOS</h1>
         <p className='lg:text-xl text-balance'>
           En Servicios Operacionales Andinos, ofrecemos una amplia gama de servicios especializados para empresas

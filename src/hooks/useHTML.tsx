@@ -1,4 +1,4 @@
-const useHTML = ({ text }) => {
+const useHTML = ({ text }: { text: string }) => {
   return <div dangerouslySetInnerHTML={{ __html: text }} />
 }
 
