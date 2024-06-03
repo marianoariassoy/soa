@@ -1,31 +1,17 @@
 import Slider from './SliderSomosSoa'
 import { useInView } from 'react-intersection-observer'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const SomosSoa = () => {
+  const { data, loading } = useFetch(`/textos`)
+
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.3
   })
 
-  const data = [
-    {
-      id: 1,
-      title: 'Misión',
-      description:
-        'Acompañar a nuestros clientes durante el desarrollo de sus proyectos de manera segura, eficiente y responsable hacia el medio ambiente, optimizando la producción y reduciendo sus costos operativos.'
-    },
-    {
-      id: 2,
-      title: 'Visión',
-      description:
-        'Ser una empresa líder en el sector energético, entregando soluciones innovadoras, sostenibles. y de alta calidad.'
-    },
-    {
-      id: 3,
-      title: 'Valores',
-      description: 'Seguridad, integridad, trabajo en equipo, excelencia, innovación y respeto por las personas.'
-    }
-  ]
+  if (loading) return <Loader />
 
   return (
     <section id='quienes-somos'>
@@ -40,7 +26,7 @@ const SomosSoa = () => {
           </div>
         </div>
         <div className={`${inView ? 'animate-fade-left' : 'opacity-0'}`}>
-          <Slider data={data} />
+          <Slider data={data.slice(0, 3)} />
         </div>
       </div>
       <div className='w-20 h-52 bg-lines'></div>

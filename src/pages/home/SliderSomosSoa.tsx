@@ -1,11 +1,12 @@
 import { Fade } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
+import HTML from '../../hooks/useHTML'
 
 interface Props {
   data: {
     id: number
     title: string
-    description: string
+    text: string
   }[]
 }
 
@@ -14,7 +15,7 @@ const Slider = ({ data }: Props) => {
     autoplay: true,
     transitionDuration: 500,
     duration: 3000,
-    indicators: true,
+    indicators: false,
     arrows: false,
     infinite: true,
     pauseOnHover: false
@@ -29,7 +30,9 @@ const Slider = ({ data }: Props) => {
         >
           <h2 className='text-4xl font-extrabold'>{item.title}</h2>
           <hr />
-          <p className='lg:text-xl text-balance'>{item.description}</p>
+          <div className='lg:text-xl text-balance'>
+            <HTML text={item.text} />
+          </div>
         </article>
       ))}
     </Fade>

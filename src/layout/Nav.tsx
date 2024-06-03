@@ -1,6 +1,9 @@
 import { menu } from '../components/data'
+import { Link, useLocation } from 'wouter'
 
 const Nav = () => {
+  const [path] = useLocation()
+
   return (
     <>
       <nav
@@ -10,12 +13,21 @@ const Nav = () => {
         <ul className='flex flex-wrap gap-y-1 gap-x-3 lg:gap-x-6 xl:gap-x-12 items-center uppercase font-medium text-sm'>
           {menu.map((item, index) => (
             <li key={index}>
-              <a
-                href={item.path}
-                className='hover:opacity-60 scroll'
-              >
-                {item.title}
-              </a>
+              {path === '/' ? (
+                <a
+                  href={item.path}
+                  className='hover:opacity-60 scroll'
+                >
+                  {item.title}
+                </a>
+              ) : (
+                <Link
+                  href='/'
+                  className='hover:opacity-60'
+                >
+                  {item.title}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

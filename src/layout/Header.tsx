@@ -2,8 +2,11 @@ import Nav from './Nav'
 import { Logo } from '../components/icons'
 import Social from './Social'
 import { useEffect } from 'react'
+import { Link, useLocation } from 'wouter'
 
 const Header = () => {
+  const [path] = useLocation()
+
   useEffect(() => {
     const header = document.getElementById('header')!
     window.addEventListener('scroll', () => {
@@ -21,12 +24,21 @@ const Header = () => {
       id='header'
     >
       <div className='px-6 lg:px-12'>
-        <a
-          href='#hero'
-          className='hover:text-gray-300 transition-all scroll'
-        >
-          <Logo />
-        </a>
+        {path === '/' ? (
+          <a
+            href='#hero'
+            className='hover:text-gray-300 transition-all scroll'
+          >
+            <Logo />
+          </a>
+        ) : (
+          <Link
+            href='/'
+            className='hover:text-gray-300 transition-all'
+          >
+            <Logo />
+          </Link>
+        )}
       </div>
       <div>
         <Nav />

@@ -1,18 +1,24 @@
 import { useInView } from 'react-intersection-observer'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
+import HTML from '../../hooks/useHTML'
 
 const Experiencia = () => {
+  const { data, loading } = useFetch(`/textos`)
+
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.3
   })
+
+  if (loading) return <Loader />
 
   return (
     <section
       id='experiencia'
       className='h-screen bg-no-repeat bg-cover relative'
       style={{
-        backgroundImage:
-          'url(https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&cs=tinysrgb&w=2400)'
+        backgroundImage: 'url(http://localhost/sites/soa-backend/images-static/experiencia.jpg)'
       }}
     >
       <div className='bg-primary w-20 h-20 absolute z-20'></div>
@@ -25,12 +31,9 @@ const Experiencia = () => {
         >
           <hr />
           <h1 className='text-5xl lg:text-6xl font-extrabold break-words'>EXPERIENCIA</h1>
-          <p className='lg:text-xl text-balance max-w-4xl'>
-            Nuestro equipo de profesionales cuenta con una vasta experiencia en la industria minera y energética, con un
-            enfoque particular en el sector del litio. Con una combinación de conocimientos técnicos y prácticos, hemos
-            liderado con éxito numerosos proyectos en la región, demostrando nuestro compromiso con la excelencia y la
-            innovación en cada paso del camino.
-          </p>
+          <div className='lg:text-xl text-balance max-w-4xl'>
+            <HTML text={data[3].text} />
+          </div>
         </div>
       </div>
       <div className='absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-transparent to-black'></div>
