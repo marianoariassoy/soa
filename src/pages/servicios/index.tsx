@@ -15,6 +15,7 @@ const Index = () => {
     const header = document.getElementById('header')!
     header.classList.add('bg-black/40')
     window.scrollTo(0, 0)
+
     return () => {
       header.classList.remove('bg-black/40')
     }
@@ -24,6 +25,7 @@ const Index = () => {
     if (!loading) {
       const newData = data.filter(item => item.id == id)
       setDataFiltered(newData)
+      document.title = `SOA - ${newData[0].title}`
     }
   }, [data, id, loading])
 

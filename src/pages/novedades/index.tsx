@@ -30,6 +30,7 @@ const Index = () => {
     if (!loading) {
       const newData = data.filter(item => item.id == id)
       setDataFiltered(newData)
+      document.title = `SOA - ${newData[0].title}`
     }
   }, [data, id, loading])
 
@@ -58,7 +59,7 @@ const Index = () => {
               alt=''
             ></Image>
           )}
-          <div className='p-6 lg:px-12 lg:py-20 max-w-7xl lg:text-xl'>
+          <div className='p-6 lg:px-12 lg:py-20 max-w-7xl'>
             <HTML text={dataFiltered[0].text} />
           </div>
         </section>

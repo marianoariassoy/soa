@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Layout from '../../layout/Layout'
 import Clientes from './Clientes'
 import Contacto from './Contacto'
@@ -9,6 +10,11 @@ import Servicios from './Servicios'
 import SomosSoa from './SomosSoa'
 
 const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    document.title = 'SOA Servicios Operacionales Andinos'
+  }, [])
+
   return (
     <Layout>
       <Hero />

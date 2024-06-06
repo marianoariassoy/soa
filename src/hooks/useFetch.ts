@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-const apiUrl = 'http://localhost/sites/soa-backend/api'
+const apiUrl = 'https://soa.ar/api'
 import axios from 'axios'
 
 function useFetch(url: string) {

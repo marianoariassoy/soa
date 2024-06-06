@@ -18,7 +18,7 @@ const Experiencia = () => {
       id='experiencia'
       className='h-screen bg-no-repeat bg-cover relative'
       style={{
-        backgroundImage: 'url(http://localhost/sites/soa-backend/images-static/experiencia.jpg)'
+        backgroundImage: 'url(https://soa.ar/backend/images-static/experiencia.jpg)'
       }}
     >
       <div className='bg-primary w-20 h-20 absolute z-20'></div>

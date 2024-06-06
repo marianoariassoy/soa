@@ -19,7 +19,7 @@ const Seguridad = () => {
       id='seguridad-y-medio-ambiente'
       className='h-screen bg-no-repeat bg-cover relative'
       style={{
-        backgroundImage: 'url(http://localhost/sites/soa-backend/images-static/seguridad.jpg)'
+        backgroundImage: 'url(https://soa.ar/backend/images-static/seguridad.jpg)'
       }}
     >
       <div className='absolute top-0 right-0 h-20 z-10'>

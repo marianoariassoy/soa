@@ -10,7 +10,7 @@ const Footer = () => {
             <a
               key={index}
               href={item.path}
-              className='hover:text-white/50 transition-all'
+              className='hover:text-white/50 transition-all scroll'
             >
               {item.title}
             </a>
