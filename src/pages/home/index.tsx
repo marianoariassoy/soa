@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import Layout from '../../layout/Layout'
-import Clientes from './Clientes'
+// import Clientes from './Clientes'
 import Contacto from './Contacto'
 import Experiencia from './Experiencia'
 import Hero from './Hero'
@@ -22,7 +22,7 @@ const Index = () => {
       <Experiencia />
       <Seguridad />
       <Servicios />
-      <Clientes />
+      {/* <Clientes /> */}
       <Novedades />
       <Contacto />
     </Layout>

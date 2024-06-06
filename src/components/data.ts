@@ -17,10 +17,10 @@ export const menu = [
     title: 'Servicios',
     path: '#servicios'
   },
-  {
-    title: 'Clientes y proyectos',
-    path: '#clientes-y-proyectos'
-  },
+  // {
+  //   title: 'Clientes y proyectos',
+  //   path: '#clientes-y-proyectos'
+  // },
   {
     title: 'Novedades',
     path: '#novedades'

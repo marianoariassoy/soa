@@ -22,7 +22,7 @@ const SomosSoa = () => {
         >
           <div className='flex flex-col text-4xl lg:text-6xl font-extrabold'>
             <span>SOMOS</span>
-            <span>NOA</span>
+            <span>SOA</span>
           </div>
         </div>
         <div className={`${inView ? 'animate-fade-left' : 'opacity-0'}`}>

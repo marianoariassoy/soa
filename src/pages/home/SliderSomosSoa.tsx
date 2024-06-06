@@ -1,6 +1,7 @@
 import { Fade } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import HTML from '../../hooks/useHTML'
+import { Back, Forward } from '../../components/icons'
 
 interface Props {
   data: {
@@ -16,9 +17,20 @@ const Slider = ({ data }: Props) => {
     transitionDuration: 500,
     duration: 3000,
     indicators: false,
-    arrows: false,
+    arrows: true,
     infinite: true,
-    pauseOnHover: false
+    pauseOnHover: false,
+    initialSlide: 0,
+    prevArrow: (
+      <div className='hover:text-white text-primary transition-all text-2xl -ml-20 hidden lg:block'>
+        <Back />
+      </div>
+    ),
+    nextArrow: (
+      <div className='hover:text-white text-primary transition-all text-2xl absolute -mr-20 hidden lg:block'>
+        <Forward />
+      </div>
+    )
   }
 
   return (
@@ -28,7 +40,7 @@ const Slider = ({ data }: Props) => {
           className='flex flex-col gap-y-6'
           key={item.id}
         >
-          <h2 className='text-2xl lg:text-4xl font-extrabold'>{item.title}</h2>
+          <h2 className='text-2xl lg:text-4xl font-extrabold'>{item.title.replace(/on/g, 'ón')}</h2>
           <hr />
           <div className='lg:text-xl text-balance'>
             <HTML text={item.text} />
