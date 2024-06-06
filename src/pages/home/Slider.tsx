@@ -25,7 +25,7 @@ const Slider = ({ data }: Props) => {
       {data.map(item => (
         <div
           key={item.id}
-          className='h-screen w-screen'
+          className='h-screen w-screen '
         >
           <Image
             src={item.image}

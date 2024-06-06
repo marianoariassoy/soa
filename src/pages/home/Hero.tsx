@@ -10,7 +10,7 @@ const Hero = () => {
 
   return (
     <section
-      className='h-screen w-screen bg-black/70'
+      className='h-screen w-screen'
       id='hero'
     >
       <Slider data={data} />
