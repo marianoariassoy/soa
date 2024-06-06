@@ -20,7 +20,7 @@ const SomosSoa = () => {
           className={`${inView ? 'animate-fade-right' : 'opacity-0'}`}
           ref={ref}
         >
-          <div className='flex flex-col text-5xl lg:text-6xl font-extrabold'>
+          <div className='flex flex-col text-4xl lg:text-6xl font-extrabold'>
             <span>SOMOS</span>
             <span>NOA</span>
           </div>

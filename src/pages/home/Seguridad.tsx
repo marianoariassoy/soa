@@ -33,8 +33,8 @@ const Seguridad = () => {
           ref={ref}
         >
           <div>
-            <h2 className='text-2xl'>COMPROMISO CON LA</h2>
-            <h1 className='text-5xl lg:text-6xl font-extrabold max-w-2xl'>SEGURIDAD Y MEDIO AMBIENTE</h1>
+            <h2 className='text-xl lg:text-2xl'>COMPROMISO CON LA</h2>
+            <h1 className='text-4xl lg:text-6xl font-extrabold max-w-2xl'>SEGURIDAD Y MEDIO AMBIENTE</h1>
           </div>
           <div className='lg:text-xl text-balance max-w-2xl'>
             <HTML text={data[4].text} />

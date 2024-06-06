@@ -24,7 +24,7 @@ const Contacto = () => {
         className={`m-auto max-w-6xl px-6 pt-12 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
         ref={ref}
       >
-        <h1 className='text-5xl lg:text-6xl font-extrabold mb-3'>CONTACTO</h1>
+        <h1 className='text-4xl lg:text-6xl font-extrabold mb-3'>CONTACTO</h1>
       </div>
       <div className='flex justify-end'>
         <div className='h-20'>

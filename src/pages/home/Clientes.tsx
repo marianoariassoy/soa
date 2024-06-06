@@ -23,7 +23,7 @@ const Clientes = () => {
         }`}
         ref={ref}
       >
-        <h1 className='text-5xl lg:text-6xl font-extrabold'>CLIENTES</h1>
+        <h1 className='text-4xl lg:text-6xl font-extrabold'>CLIENTES</h1>
         <div className='lg:text-xl text-balance'>{!loadingTextos && <HTML text={textos[6].text} />}</div>
       </div>
       <div

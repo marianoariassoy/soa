@@ -11,13 +11,6 @@ interface Props {
 }
 
 const ServiciosItem = ({ data }: Props) => {
-  // const [number, setNumber] = useState(0)
-
-  // useEffect(() => {
-  //   const number = Math.floor(Math.random() * 3001)
-  //   setNumber(number)
-  // }, [])
-
   return (
     <article
       className={`opacity-0 aspect-[5/4] lg:aspect-[4/5] border border-white border-t-0 relative cursor-pointer animate-fade`}

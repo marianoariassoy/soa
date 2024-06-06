@@ -4,6 +4,11 @@ import { Link, useLocation } from 'wouter'
 const Nav = () => {
   const [path] = useLocation()
 
+  const closeMenu = () => {
+    const menu = document.getElementById('menu-mobile')
+    menu.classList.toggle('hidden')
+  }
+
   return (
     <>
       <nav
@@ -43,6 +48,7 @@ const Nav = () => {
                 <a
                   href={item.path}
                   className='hover:text-white/50 scroll'
+                  onClick={closeMenu}
                 >
                   {item.title}
                 </a>

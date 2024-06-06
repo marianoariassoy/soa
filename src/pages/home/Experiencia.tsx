@@ -30,7 +30,7 @@ const Experiencia = () => {
           ref={ref}
         >
           <hr />
-          <h1 className='text-5xl lg:text-6xl font-extrabold break-words'>EXPERIENCIA</h1>
+          <h1 className='text-4xl lg:text-6xl font-extrabold break-words'>EXPERIENCIA</h1>
           <div className='lg:text-xl text-balance max-w-4xl'>
             <HTML text={data[3].text} />
           </div>

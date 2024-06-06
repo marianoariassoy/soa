@@ -27,7 +27,7 @@ const Novedades = () => {
           ref={ref}
         >
           <hr />
-          <h1 className='text-5xl lg:text-6xl font-extrabold mt-20 break-words'>NOVEDADES</h1>
+          <h1 className='text-4xl lg:text-6xl font-extrabold mt-20 break-words'>NOVEDADES</h1>
         </div>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 animate-delay-500 gap-6 mt-12 ${

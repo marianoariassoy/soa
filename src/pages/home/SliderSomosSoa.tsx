@@ -28,7 +28,7 @@ const Slider = ({ data }: Props) => {
           className='flex flex-col gap-y-6'
           key={item.id}
         >
-          <h2 className='text-4xl font-extrabold'>{item.title}</h2>
+          <h2 className='text-2xl lg:text-4xl font-extrabold'>{item.title}</h2>
           <hr />
           <div className='lg:text-xl text-balance'>
             <HTML text={item.text} />
